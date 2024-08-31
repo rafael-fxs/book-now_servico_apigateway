@@ -23,6 +23,12 @@ public class ApigatewayApplication {
 				.route(p -> p
 						.path("/api/transacoes/**")
 						.uri("http://localhost:8083/api/transacoes"))
+				.route(p -> p
+						.path("/livros/**")
+						.uri("http://localhost:8082/livros"))
+				.route(p -> p
+						.path("/Usuario/**")
+						.uri("http://localhost:8081/Usuario"))
 				.build();
 	}
 }

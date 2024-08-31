@@ -1,4 +1,4 @@
-package BookNow_app.BookNow.Utils;
+package com.booknow.apigateway;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
