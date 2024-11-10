@@ -23,6 +23,9 @@ public class ApigatewayApplication {
 	@Value("${livros.service.url}")
 	private String livrosServiceUrl;
 
+	@Value("${avaliacao.service.url}")
+	private String avaliacaoServiceUrl;
+
 	public static void main(String[] args) {
 		SpringApplication.run(ApigatewayApplication.class, args);
 	}
@@ -53,6 +56,12 @@ public class ApigatewayApplication {
 						.path("/livros/**")
 						.filters(f -> f.filter(jwtValidationGatewayFilter)) // Use the injected filter bean
 						.uri(livrosServiceUrl + "/livros"))
+
+				.route("avaliacao_route", p -> p
+						.path("/avaliacao/**")
+						.filters(f -> f.filter(jwtValidationGatewayFilter)) // Use the injected filter bean
+						.uri(avaliacaoServiceUrl + "/avaliacao"))
+
 				.build();
 	}
 }
